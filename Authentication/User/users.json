@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Иван Петров",
+    "age": 25,
+    "gender": "male",
+    "email": "ivan@example.com",
+    "password": "secure123"
+  },
+  {
+    "name": "Иван Петров",
+    "age": 25,
+    "gender": "male",
+    "email": "ivan@example.com",
+    "password": "secure123"
+  }
+]

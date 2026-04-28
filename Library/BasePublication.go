@@ -1,4 +1,4 @@
-package main
+package Library
 
 type BasePublication struct {
 	id              string // Уникальный идентификатор (например: "book_001", "comics_042")

@@ -1,13 +1,28 @@
 package main
 
+import (
+	"Library/Authentication"
+	"fmt"
+	"log"
+)
+
 func main() {
-	//bookShelf := NewShelf[Book](1)
-	//bookShelf.Add(Book{"1984", "Orwell"})
-	//
-	//// Полку для газет
-	//newsShelf := NewShelf[Newspaper](2)
-	//newsShelf.Add(Newspaper{"NY Times", "2024-01-15"})
-	//
-	//fmt.Println(bookShelf.Count())  // 1
-	//fmt.Println(newsShelf.IsFull())
+
+	fmt.Println("=== Добавляем первого пользователя ===")
+	user1 := &Authentication.User{}
+	user1.AddUser("Иван Петров", "male", "ivan@example.com", "secure123", 25)
+
+	err := Authentication.AddUserToFile(*user1)
+	if err != nil {
+		log.Println(err)
+	} else {
+		fmt.Println("✓ Пользователь 1 добавлен")
+	}
+
+	fmt.Println("\n=== Пытаемся добавить пустого пользователя ===")
+	emptyUser := Authentication.User{}
+	err = Authentication.AddUserToFile(emptyUser)
+	if err != nil {
+		fmt.Println("✗ Ошибка:", err) // Сработает защита
+	}
 }

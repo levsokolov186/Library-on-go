@@ -1,4 +1,4 @@
-package main
+package Library
 
 type Comics struct {
 	BasePublication

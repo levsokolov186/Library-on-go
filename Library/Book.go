@@ -1,4 +1,4 @@
-package main
+package Library
 
 type Book struct {
 	BasePublication

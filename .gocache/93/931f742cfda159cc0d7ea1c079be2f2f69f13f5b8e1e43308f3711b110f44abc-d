@@ -1,0 +1,5 @@
+./BasePublication.go
+./Book.go
+./Comics.go
+./NewPaper.go
+./Shelves.go
