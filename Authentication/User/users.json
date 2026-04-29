@@ -10,7 +10,28 @@
     "name": "Иван Петров",
     "age": 25,
     "gender": "male",
+    "email": "fffff@gmail.com",
+    "password": "secure123"
+  },
+  {
+    "name": "Иван Петров",
+    "age": 25,
+    "gender": "male",
     "email": "ivan@example.com",
+    "password": "secure123"
+  },
+  {
+    "name": "Иван Петров",
+    "age": 25,
+    "gender": "male",
+    "email": "ivan@example.com",
+    "password": "secure123"
+  },
+  {
+    "name": "Иван Петров",
+    "age": 25,
+    "gender": "male",
+    "email": "h@gmail.com",
     "password": "secure123"
   }
 ]

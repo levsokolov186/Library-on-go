@@ -69,16 +69,59 @@ func LoadAllUsers() ([]User, error) {
 	return users, nil
 }
 
+func SimilarityCheck(user *User) error {
+	filePath := getUsersFilePath()
+
+	if _, err := os.Stat(filePath); os.IsNotExist(err) {
+		fmt.Println("Файл с пользователями не найден, email уникален")
+		return nil
+	}
+
+	data, err := os.ReadFile(filePath)
+	if err != nil {
+		return fmt.Errorf("ошибка чтения файла: %w", err)
+	}
+
+	if len(data) == 0 {
+		fmt.Println("Файл пустой, email уникален")
+		return nil
+	}
+
+	var users []User
+	err = json.Unmarshal(data, &users)
+	if err != nil {
+		return fmt.Errorf("ошибка декодирования JSON: %w", err)
+	}
+
+	for _, existingUser := range users {
+		if existingUser.Email == user.Email {
+			return fmt.Errorf("ОШИБКА: пользователь с email '%s' уже существует", user.Email)
+		}
+	}
+
+	fmt.Println("Email уникален, можно добавлять пользователя")
+	return nil
+}
+
 func AddUserToFile(user User) error {
+	// Проверяем, что пользователь не пустой
 	if user.Name == "" && user.Email == "" && user.Password == "" {
 		return fmt.Errorf("ОШИБКА: нельзя добавить пустого пользователя! Заполните данные пользователя")
 	}
 
+	// Проверяем уникальность email (ВАЖНО: обрабатываем ошибку!)
+	err := SimilarityCheck(&user)
+	if err != nil {
+		return err // Возвращаем ошибку, если email уже существует
+	}
+
+	// Загружаем существующих пользователей
 	users, err := LoadAllUsers()
 	if err != nil {
 		return err
 	}
 
+	// Фильтруем пустых пользователей
 	filteredUsers := make([]User, 0, len(users)+1)
 	for _, existingUser := range users {
 		if existingUser.Name == "" && existingUser.Email == "" && existingUser.Password == "" {
@@ -87,8 +130,10 @@ func AddUserToFile(user User) error {
 		filteredUsers = append(filteredUsers, existingUser)
 	}
 
+	// Добавляем нового пользователя
 	filteredUsers = append(filteredUsers, user)
 
+	// Сохраняем всех пользователей
 	return SaveAllUsers(filteredUsers)
 }
 
