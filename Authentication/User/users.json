@@ -3,35 +3,16 @@
     "name": "Иван Петров",
     "age": 25,
     "gender": "male",
-    "email": "ivan@example.com",
-    "password": "secure123"
+    "email": "hggg@gmail.com",
+    "password": "secure123",
+    "authentication_code": "d723f2476c31b33d760d6b4cbec73e1a"
   },
   {
     "name": "Иван Петров",
     "age": 25,
     "gender": "male",
-    "email": "fffff@gmail.com",
-    "password": "secure123"
-  },
-  {
-    "name": "Иван Петров",
-    "age": 25,
-    "gender": "male",
-    "email": "ivan@example.com",
-    "password": "secure123"
-  },
-  {
-    "name": "Иван Петров",
-    "age": 25,
-    "gender": "male",
-    "email": "ivan@example.com",
-    "password": "secure123"
-  },
-  {
-    "name": "Иван Петров",
-    "age": 25,
-    "gender": "male",
-    "email": "h@gmail.com",
-    "password": "secure123"
+    "email": "hgggg@gmail.com",
+    "password": "secure123",
+    "authentication_code": "11d9aac6be3ee8cb790adc6aef195eaa"
   }
 ]

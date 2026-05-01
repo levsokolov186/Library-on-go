@@ -24,6 +24,8 @@ func (u *User) AddUser(name, gender, email, password string, age int) {
 	u.Gender = gender
 	u.Email = email
 	u.Password = password
+	key := GetKey(16)
+	u.AuthenticationCode = key
 }
 
 func getUsersFilePath() string {

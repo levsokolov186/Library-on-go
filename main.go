@@ -9,7 +9,7 @@ import (
 func main() {
 
 	user1 := &Authentication.User{}
-	user1.AddUser("Иван Петров", "male", "h@gmail.com", "secure123", 25)
+	user1.AddUser("Иван Петров", "male", "hgggg@gmail.com", "secure123", 25)
 	err := Authentication.AddUserToFile(*user1)
 	if err != nil {
 		log.Println(err)
@@ -24,5 +24,4 @@ func main() {
 	} else {
 		fmt.Println("✓ Пользователь 1 добавлен")
 	}
-
 }
