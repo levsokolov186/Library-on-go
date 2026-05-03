@@ -26,6 +26,7 @@ func (u *User) AddUser(name, gender, email, password string, age int) {
 	u.Password = password
 	key := GetKey(16)
 	u.AuthenticationCode = key
+	fmt.Println("Ваш код аундефикации для входа в библиотеку: ", u.AuthenticationCode)
 }
 
 func getUsersFilePath() string {
@@ -45,8 +46,6 @@ func SaveAllUsers(users []User) error {
 	if err != nil {
 		return fmt.Errorf("ошибка сохранения файла: %w", err)
 	}
-
-	fmt.Printf("Все пользователи сохранены в: %s\n", filePath)
 	return nil
 }
 
@@ -100,8 +99,6 @@ func SimilarityCheck(user *User) error {
 			return fmt.Errorf("ОШИБКА: пользователь с email '%s' уже существует", user.Email)
 		}
 	}
-
-	fmt.Println("Email уникален, можно добавлять пользователя")
 	return nil
 }
 
