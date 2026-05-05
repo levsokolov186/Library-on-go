@@ -1,13 +1,37 @@
 package Library
 
+import "fmt"
+
 type Book struct {
 	BasePublication
-	size        int      // Размер/формат книги в мм (например: 150x220)
-	author      string   // Автор или соавторы (основной автор)
-	authors     []string // Список всех авторов (если их несколько)
-	isbn        string   // Международный стандартный книжный номер (ISBN-10 или ISBN-13)
-	genre       string   // Жанр книги (например: "Fantasy", "Science Fiction")
-	edition     int      // Номер издания (1 = первое издание)
-	series      string   // Название серии, если книга входит в серию (например: "The Witcher")
-	seriesIndex int      // Порядковый номер книги в серии (например: 3 - третья книга)
+	size        int
+	author      string
+	authors     []string
+	isbn        string
+	genre       string
+	edition     int
+	series      string
+	seriesIndex int
+}
+
+func NewBook(id, title, author string, pageCount int) Book {
+	return Book{
+		BasePublication: BasePublication{
+			id:              id,
+			title:           title,
+			publisher:       "Демо-библиотека",
+			publicationDate: "2026-05-05",
+			language:        "ru",
+			pageCount:       pageCount,
+			format:          "hardcover",
+		},
+		author:  author,
+		authors: []string{author},
+		genre:   "Художественная литература",
+		edition: 1,
+	}
+}
+
+func (b Book) Summary() string {
+	return fmt.Sprintf("%s — %s", b.title, b.author)
 }
