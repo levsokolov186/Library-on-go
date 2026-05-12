@@ -1,6 +1,8 @@
 package Authentication
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func Entrance() {
 	fmt.Println("Добро пожаловать в библиотеку!")

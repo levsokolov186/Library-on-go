@@ -46,6 +46,15 @@ func Login() error {
 		return err
 	}
 
-	fmt.Printf("Вы успешно вошли, код аундефикаци прилегающий к этому аккаунту: %s\n", user.AuthenticationCode)
+	fmt.Printf("Код аундефикаци прилегающий к этому аккаунту: %s\n", user.AuthenticationCode)
+	fmt.Println("Введите код аундефикаци прилегающий к этому аккаунту: ")
+
+	var authenticationCode string
+	_, errOne := fmt.Scanln(&authenticationCode)
+	if errOne != nil {
+		fmt.Println("Ошибка при вводе:", err)
+	}
+	fmt.Println(CheckCD(authenticationCode))
+
 	return nil
 }
