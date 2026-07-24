@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Иван Петров",
+    "age": 25,
+    "gender": "male",
+    "email": "hggg@gmail.com",
+    "password": "secure123",
+    "authentication_code": "d723f2476c31b33d760d6b4cbec73e1a"
+  },
+  {
+    "name": "Иван Петров",
+    "age": 25,
+    "gender": "male",
+    "email": "hgggg@gmail.com",
+    "password": "secure123",
+    "authentication_code": "11d9aac6be3ee8cb790adc6aef195eaa"
+  },
+  {
+    "name": "Лев",
+    "age": 14,
+    "gender": "муж",
+    "email": "eef@gmail.com",
+    "password": "123455",
+    "authentication_code": "d7d4700c4a61e19d4b46850e3c761edb"
+  },
+  {
+    "name": "f",
+    "age": 2,
+    "gender": "e",
+    "email": "e",
+    "password": "2",
+    "authentication_code": "9219b8dd78c4c5256a56cc661b9d4c64"
+  },
+  {
+    "name": "w",
+    "age": 1,
+    "gender": "w",
+    "email": "w",
+    "password": "w",
+    "authentication_code": "d96b028ae19a426e98d362f00c1d90ae"
+  }
+]
